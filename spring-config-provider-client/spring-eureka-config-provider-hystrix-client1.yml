@@ -5,8 +5,6 @@ spring:
 ---
 spring:
    profiles: dev
-   application:
-      name: spring-eureka-config-provider-hystrix-client1
 server:
    port: 8001
 eureka:
@@ -18,11 +16,6 @@ eureka:
      lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
      instance-id: eureka-provider-client1  # 在信息列表时显示主机名称
      prefer-ip-address: true     # 访问的路径变为IP地址
-info:
-   app.name: spring-cloud
-   company.name: eureka-provider-client1
-   build.artifactId: $project.artifactId$
-   build.version: $project.version$  
 management:
    endpoints:
       web:
@@ -37,8 +30,6 @@ management:
 ---
 spring:
    profiles: beta
-   application:
-      name: spring-eureka-config-provider-hystrix-client1
 server:
    port: 8001
 eureka:
@@ -50,11 +41,6 @@ eureka:
      lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
      instance-id: eureka-provider-client1  # 在信息列表时显示主机名称
      prefer-ip-address: true     # 访问的路径变为IP地址
-info:
-   app.name: spring-cloud
-   company.name: eureka-provider-client1
-   build.artifactId: $project.artifactId$
-   build.version: $project.version$  
 management:
    endpoints:
       web:
