@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+spring:
+   profiles: dev
+   application:
+      name: spring-config-eureka-server3
+server:
+   port: 7003
+eureka:
+   client: # 客户端进行Eureka注册的配置 
+      serviceUrl:
+         defaultZone: http://spring-eureka-server2:7002/eureka,http://spring-eureka-server1:7001/eureka
+      registerWithEureka: false    # 当前的微服务不注册到eureka之中
+      fetchRegistry: false     # 不通过eureka获取注册信息
+   instance: # eureak实例定义
+      hostname: spring-eureka-server3 # 定义Eureka实例所在的主机名称
+---
+spring:
+   profiles: beta
+   application:
+      name: spring-eureka-server3
+server:
+   port: 7003
+eureka:
+   client: # 客户端进行Eureka注册的配置 
+      serviceUrl:
+         defaultZone: http://spring-eureka-server2:7002/eureka,http://spring-eureka-server1:7001/eureka
+      registerWithEureka: false    # 当前的微服务不注册到eureka之中
+      fetchRegistry: false     # 不通过eureka获取注册信息
+   instance: # eureak实例定义
+      hostname: spring-eureka-server3 # 定义Eureka实例所在的主机名称
